@@ -6,9 +6,12 @@ website:
   title: "pkgdocs"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - usethis.qmd
+    right:
+      - icon: house-door-fill
+        href: https://wzbillings.com
+      - icon: github
+        href: https://github.com/wzbillings/pkgdocs
 
 format:
   html:
