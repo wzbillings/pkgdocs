@@ -1,0 +1,68 @@
+---
+title: "`usethis`"
+---
+
+# Configuration
+
+* [`use_blank_slate()`](https://usethis.r-lib.org/reference/use_blank_slate.html): function that edits R environment settings so that
+the workspace is never saved. By default, this affects the entire user scope,
+but also has an option to affect only the project scope.
+
+* [`.Rprofile` helper functions](https://usethis.r-lib.org/reference/rprofile-helper.html) open the user's `.Rprofile` file, and return
+code that should be pasted into the file. I do not plan to use most of these
+because they make changes to the user-wide `.Rprofile` that I don't really like,
+so I won't detail further. The only one of these I plan to use is
+`use_partial_warnings()` which forces functions to issue warnings when argument
+names are only partial matches. Because this changes the user-level `.Rprofile`
+it will affect every session I run on a given computer.
+
+* [Helper functions to open configuration files](https://usethis.r-lib.org/reference/edit.html):
+these are pretty self-explanatory. They also have options to only edit the
+files in the project scope, which is nice. There are functions for editing:
+`.Rprofile`, `.Renviron`, `.R/Makevars`, `.gitconfig`, `.gitignore`,
+`pkgdown` YAML config file, RStudio snippets file, and RStudio preferences file.
+**I also learned that these functions will create the appropriate file if it does
+not exist**, which is a nice feature.
+
+# Git and GitHub
+
+* `create_from_github()`: creates a new local project with local Git repo from
+a GitHub repo. Either clones a repo that you own, or forks and clones a repo
+that you do not have write access to (including setting up the new remote
+and branch correctly). Works best when GH credentials are set up correctly
+with other `usethis` functionality.
+  
+  + The option `usethis.destdir` will change the default location where these
+  repos are cloned.
+  + If you are in an RStudio session and the repo does not have a `.Rproj` file,
+  this function **will create one by default**.
+
+* `use_git()`: initializes a Git repository in the current working directory,
+making an initial commit, and creating a sensible default `.gitignore`.
+
+* GitHub Actions setup: I still don't really know what a GitHub action is, so
+I might need to learn more about that before my notes here are useful.
+
+	+ "Sets up CI for an R package that is developed using GH Actions".
+	+ Can run `R CMD` check on various OS and R versions
+	+ Can build and deploy a `pkgdown` site
+	+ Can determine test coverage
+	+ Adds necessary config files to `.Rbuildignore`
+	+ Provides the markdown code to insert a badge into the README.
+
+* `use_github()`: checks that the project is a valid Git repo and if so,
+creates an associated GH repo, adds as `origin` remote, pushes to GH, and
+sets the `origin` remote as the upstream remote.
+Also calls `use_github_links()`.
+
+* `use_github_file()`: copies a file from a GH repo into the current project.
+
+* There is a [set of functions](https://usethis.r-lib.org/reference/use_github_labels.html) to manage GH issue labels.
+
+* `use_github_links()`: sets the URL and BugReports GH fields with
+"appropriate links." I don't really know what that means so I guess I should
+try it out with this R project and see what happens.
+
+(Stopped here, 2022-12-08)
+
+<!-- END OF FILE -->

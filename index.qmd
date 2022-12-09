@@ -1,0 +1,6 @@
+---
+title: "pkgdocs"
+---
+
+This is where I record my notes on package documentation! Started with the
+R4DS learning community's pkgdocs book club.
