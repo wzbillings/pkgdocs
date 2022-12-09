@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "pkgdocs",
+    "section": "",
+    "text": "This is where I record my notes on package documentation! Started with the R4DS learning community’s pkgdocs book club."
+  },
+  {
+    "objectID": "usethis.html",
+    "href": "usethis.html",
+    "title": "usethis",
+    "section": "",
+    "text": "Git and GitHub\n\ncreate_from_github(): creates a new local project with local Git repo from a GitHub repo. Either clones a repo that you own, or forks and clones a repo that you do not have write access to (including setting up the new remote and branch correctly). Works best when GH credentials are set up correctly with other usethis functionality.\n\nThe option usethis.destdir will change the default location where these repos are cloned.\nIf you are in an RStudio session and the repo does not have a .Rproj file, this function will create one by default.\n\nuse_git(): initializes a Git repository in the current working directory, making an initial commit, and creating a sensible default .gitignore.\nGitHub Actions setup: I still don’t really know what a GitHub action is, so I might need to learn more about that before my notes here are useful.\n\n“Sets up CI for an R package that is developed using GH Actions”.\nCan run R CMD check on various OS and R versions\nCan build and deploy a pkgdown site\nCan determine test coverage\nAdds necessary config files to .Rbuildignore\nProvides the markdown code to insert a badge into the README.\n\nuse_github(): checks that the project is a valid Git repo and if so, creates an associated GH repo, adds as origin remote, pushes to GH, and sets the origin remote as the upstream remote. Also calls use_github_links().\nuse_github_file(): copies a file from a GH repo into the current project.\nThere is a set of functions to manage GH issue labels.\nuse_github_links(): sets the URL and BugReports GH fields with “appropriate links.” I don’t really know what that means so I guess I should try it out with this R project and see what happens.\n\n(Stopped here, 2022-12-08)"
+  }
+]
