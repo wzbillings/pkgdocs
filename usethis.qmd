@@ -2,6 +2,11 @@
 title: "`usethis`"
 ---
 
+[`usethis`](https://usethis.r-lib.org/) is a package for automating workflows
+within R projects. The main goal is to automate repetitive tasks that occur
+often while setting up and working with R projects, like editing configuration
+files, interfacing with Git/GitHub, and developing R packages.
+
 # Configuration
 
 * [`use_blank_slate()`](https://usethis.r-lib.org/reference/use_blank_slate.html): function that edits R environment settings so that
